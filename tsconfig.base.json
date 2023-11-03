@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@jobsin-react-native-nx/constants": ["libs/constants/src/index.ts"],
-      "@jobsin-react-native-nx/core": ["libs/core/src/index.ts"],
-      "@jobsin-react-native-nx/platform": ["libs/platform/src/index.ts"]
+      "@libs/constants": ["libs/constants/src/index.ts"],
+      "@libs/core": ["libs/core/src/index.ts"],
+      "@libs/platform": ["libs/platform/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,22 +1,164 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "prefer-arrow", "unused-imports", "eslint-comments"],
   "overrides": [
     {
+      "extends": ["eslint:recommended", "plugin:eslint-comments/recommended"],
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "excludedFiles": ["*.spec.tsx"],
       "rules": {
-        "@nx/enforce-module-boundaries": [
+        // "@nx/enforce-module-boundaries": [
+        //   "error",
+        //   {
+        //     "enforceBuildableLibDependency": true,
+        //     "allow": [],
+        //     "depConstraints": [
+        //       {
+        //         "sourceTag": "*",
+        //         "onlyDependOnLibsWithTags": ["*"]
+        //       }
+        //     ]
+        //   }
+        // ],
+        "import/order": [
           "error",
           {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
+            "newlines-between": "always",
+            "groups": [
+              "external",
+              "builtin",
+              "internal",
+              "sibling",
+              "parent",
+              "index"
+            ],
+            "pathGroups": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "pattern": "components",
+                "group": "internal"
+              },
+              {
+                "pattern": "common",
+                "group": "internal"
+              },
+              {
+                "pattern": "routes/ **",
+                "group": "internal"
+              },
+              {
+                "pattern": "assets/**",
+                "group": "internal",
+                "position": "after"
+              },
+              {
+                "pattern": "@libs/**",
+                "group": "external",
+                "position": "after"
+              },
+              {
+                "pattern": "react",
+                "group": "external",
+                "position": "before"
               }
-            ]
+            ],
+            "pathGroupsExcludedImportTypes": ["internal"],
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ],
+        "import/newline-after-import": [
+          "error",
+          {
+            "considerComments": true
+          }
+        ],
+        "sort-imports": [
+          "error",
+          {
+            "ignoreCase": false,
+            "ignoreDeclarationSort": true,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "single", "multiple"],
+            "allowSeparatedGroups": true
+          }
+        ],
+        "no-duplicate-imports": "error",
+        "no-multiple-empty-lines": "error",
+        "lines-between-class-members": "error",
+        "no-console": "warn", // make "error" later
+        "func-style": ["error", "expression"],
+        "no-empty-function": "error",
+        "prefer-const": [
+          "error",
+          {
+            "destructuring": "any",
+            "ignoreReadBeforeAssign": false
+          }
+        ],
+        "prefer-arrow-callback": "error",
+        "prefer-arrow/prefer-arrow-functions": [
+          "error",
+          {
+            "disallowPrototype": true,
+            "singleReturnOnly": false,
+            "classPropertiesAllowed": false
+          }
+        ],
+        "prefer-destructuring": [
+          "error",
+          {
+            "array": true,
+            "object": true
+          },
+          {
+            "enforceForRenamedProperties": false
+          }
+        ],
+        "react/destructuring-assignment": [
+          "error",
+          "always",
+          { "ignoreClassFields": true, "destructureInSignature": "always" }
+        ],
+        "newline-before-return": "error",
+        "no-else-return": [
+          "error",
+          {
+            "allowElseIf": false
+          }
+        ],
+        "no-unused-vars": "off",
+        "no-useless-constructor": "error",
+        "no-useless-call": "error",
+        "lines-around-directive": "error",
+        // https://eslint.org/docs/latest/rules/padding-line-between-statements
+        "padding-line-between-statements": [
+          "error",
+          {
+            "blankLine": "always",
+            "prev": "block-like",
+            "next": "block-like"
+          }
+        ],
+        "no-inline-comments": "error",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "error",
+          {
+            "vars": "all",
+            "varsIgnorePattern": "^_",
+            "args": "after-used",
+            "argsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+        "newline-after-var": "error",
+        "eslint-comments/no-use": [
+          "error",
+          {
+            "allow": []
           }
         ]
       }

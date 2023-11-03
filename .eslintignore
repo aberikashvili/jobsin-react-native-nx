@@ -1,1 +1,4 @@
 node_modules
+babel.config.js
+apps/jobsin-app/index.js
+apps/jobsin-app/metro.config.js

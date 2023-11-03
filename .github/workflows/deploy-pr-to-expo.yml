@@ -1,0 +1,44 @@
+name: Deploy to Expo
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - name: Setup expo
+        uses: expo/expo-github-action@v6
+        with:
+          expo-version: 4.x
+          expo-cache: true
+          eas-version: latest
+          token: ${{ secrets.EXPO_JOBSIN_TOKEN }}
+      - name: Install dependencies
+        run: npm install
+      - name: EAS build
+        run: echo "$(NODE_ENV=dev npx nx build jobsin-app --profile preview --interactive false --platform android)" | tee my-output.txt
+      - name: Get expo build url
+        run: |
+          expoBuildUrl="$(grep -o -E 'https?://expo.dev/accounts/(\w+)/projects/(\w|[-]\w)+/builds[^" ]+' my-output.txt | head -1)"
+          echo 'EXPO_BUILD_URL='$expoBuildUrl >> $GITHUB_ENV
+      - name: Generate qr code
+        run: |
+          expoQr="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=$EXPO_BUILD_URL"
+          echo 'EXPO_QR='$expoQr >> $GITHUB_ENV
+      - name: Add comment
+        run: gh pr comment $PR --body "**Your build is ready!** <br><br> ![Expo QR]($EXPO_QR) <br> **Explore your build on expo.dev:** <br> [$EXPO_BUILD_URL]($EXPO_BUILD_URL)"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          PR: ${{ github.event.number }}
