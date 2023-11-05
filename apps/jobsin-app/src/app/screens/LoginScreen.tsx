@@ -13,7 +13,5 @@ const LoginScreen = () => {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-  box: {
-    backgroundColor: '#000000',
-  },
+  box: {},
 });
