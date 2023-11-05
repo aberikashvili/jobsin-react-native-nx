@@ -1,24 +1,14 @@
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'react-native';
 
-import { Typography } from '@libs/constants';
+import StackNavigator from './navigators/StackNavigator';
 
 export const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <View>
-        <Text style={styles.text}>App</Text>
-      </View>
+      <StackNavigator />
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  text: {
-    ...Typography({
-      weight: 'bold',
-    }),
-  },
-});
 
 export default App;
