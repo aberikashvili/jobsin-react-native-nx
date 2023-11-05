@@ -5,4 +5,6 @@ export const Palette = {
   light: '#334F65',
   grey: '#D9D9D9',
   green: '#00BFAD',
+  blue: '#130160',
+  purple: '#D6CDFE',
 };
