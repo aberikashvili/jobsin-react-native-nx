@@ -19,7 +19,7 @@
   "private": true,
   "devDependencies": {
     "@config-plugins/detox": "~6.0.0",
-    "@expo/cli": "~0.10.12",
+    "@expo/cli": "^0.10.14",
     "@nrwl/expo": "^17.0.2",
     "@nx/detox": "17.0.2",
     "@nx/eslint": "17.0.2",
@@ -73,7 +73,7 @@
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.72.4",
+    "react-native": "0.72.6",
     "react-native-svg": "13.9.0",
     "react-native-svg-transformer": "1.0.0",
     "react-native-web": "~0.19.8",
