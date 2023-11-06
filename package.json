@@ -19,7 +19,7 @@
   "private": true,
   "devDependencies": {
     "@config-plugins/detox": "~6.0.0",
-    "@expo/cli": "~0.10.12",
+    "@expo/cli": "^0.10.14",
     "@nrwl/expo": "^17.0.2",
     "@nx/detox": "17.0.2",
     "@nx/eslint": "17.0.2",
