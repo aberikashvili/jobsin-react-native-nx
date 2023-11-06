@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Image, ImageSourcePropType } from 'react-native';
+import { Image, ImageSourcePropType, Pressable } from 'react-native';
 
 type IconProps = {
   name: keyof typeof icons;
+  onPress?: () => void;
 };
 
 export const icons: Record<string, ImageSourcePropType> = {
@@ -63,7 +64,7 @@ export const icons: Record<string, ImageSourcePropType> = {
   write: require('../../assets/icons/write.png'),
 };
 
-const Icon: React.FC<IconProps> = ({ name }) => {
+const Icon: React.FC<IconProps> = ({ name, onPress }) => {
   const icon = icons[name];
 
   if (!icon) {
@@ -72,7 +73,11 @@ const Icon: React.FC<IconProps> = ({ name }) => {
     return null;
   }
 
-  return <Image source={icon} />;
+  return (
+    <Pressable onPress={onPress}>
+      <Image source={icon} />
+    </Pressable>
+  );
 };
 
 export default Icon;
