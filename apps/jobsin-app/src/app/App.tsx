@@ -1,23 +1,31 @@
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 
-import { Typography } from '@libs/constants';
+import { StyleSheet, View } from 'react-native';
 
-export const App = () => {
+import { Input } from '@libs/core';
+
+const App = () => {
+  const handleRegistration = (formData) => {
+    formData;
+  };
+
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <View>
-        <Text style={styles.text}>App</Text>
-      </View>
-    </>
+    <View style={styles.container}>
+      <Input onSubmit={handleRegistration} />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  text: {
-    ...Typography({
-      weight: 'bold',
-    }),
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 20,
   },
 });
 
