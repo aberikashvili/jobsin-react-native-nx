@@ -6,7 +6,7 @@ import { Input } from '@libs/core';
 
 const App = () => {
   const handleRegistration = (formData) => {
-    formData;
+    formData();
   };
 
   return (
