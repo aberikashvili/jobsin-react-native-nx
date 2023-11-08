@@ -18,28 +18,37 @@ const PopupWindow = ({ buttonText = 'Tap to open modal' }) => {
         visible={modalVisible}
         onRequestClose={() => setModalVisible(false)}
       >
-        <View style={styles.modalContainer}>
-          <View style={styles.modalView}>
-            <View style={styles.draggableIndicator} />
+        <TouchableOpacity
+          style={styles.fullScreen}
+          activeOpacity={0.3}
+          onPressOut={() => setModalVisible(false)}
+        >
+          <View style={styles.modalContainer}>
+            <View style={styles.modalView}>
+              <View style={styles.draggableIndicator} />
 
-            {/* This button should change with reusable button component  */}
-            <TouchableOpacity
-              style={styles.doneButton}
-              onPress={() => setModalVisible(false)}
-            >
-              <Text style={styles.doneButtonText}>DONE</Text>
-            </TouchableOpacity>
+              {/* This button should change with reusable button component  */}
+              <TouchableOpacity
+                style={styles.doneButton}
+                onPress={() => setModalVisible(false)}
+              >
+                <Text style={styles.doneButtonText}>DONE</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
       </Modal>
     </View>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  fullScreen: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   modalContainer: {
     flex: 1,
