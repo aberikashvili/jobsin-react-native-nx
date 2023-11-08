@@ -2,7 +2,7 @@ import { StatusBar } from 'react-native';
 
 import StackNavigator from './navigators/StackNavigator';
 
-export const App = () => {
+const App: React.FC = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
