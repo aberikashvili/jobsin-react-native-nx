@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import { StatusBar } from 'react-native';
 
 import StackNavigator from './navigators/StackNavigator';
+=======
+import React, { useState } from 'react';
 
-export const App = () => {
+import { StyleSheet, View } from 'react-native';
+
+import { Checkbox } from '@libs/core';
+
+const App: React.FC = () => {
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
