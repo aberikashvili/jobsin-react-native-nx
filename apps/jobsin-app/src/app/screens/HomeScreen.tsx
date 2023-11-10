@@ -30,9 +30,15 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 23,
+    display: 'flex',
+    alignItems: 'center',
+    marginHorizontal: 8,
+    marginVertical: 12,
   },
   text: {
-    ...Typography({ weight: '700' }),
+    ...Typography({
+      weight: 'bold',
+      size: 18,
+    }),
   },
 });
