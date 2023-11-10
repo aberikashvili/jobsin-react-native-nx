@@ -1,11 +1,11 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text } from 'react-native';
+
+import { Typography } from '@libs/constants';
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView>
-      <View style={styles.box}>
-        <Text>HomeScreen</Text>
-      </View>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.text}>HomeScreen</Text>
     </SafeAreaView>
   );
 };
@@ -13,8 +13,16 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  box: {
+  container: {
+    display: 'flex',
+    alignItems: 'center',
     marginHorizontal: 8,
     marginVertical: 12,
+  },
+  text: {
+    ...Typography({
+      weight: 'bold',
+      size: 18,
+    }),
   },
 });

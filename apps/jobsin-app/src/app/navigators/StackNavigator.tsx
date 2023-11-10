@@ -13,7 +13,7 @@ const StackNavigator = () => {
       <Stack.Navigator
         initialRouteName="Main"
         screenOptions={{
-          headerShown: false,
+          headerShown: true,
         }}
       >
         <Stack.Screen name="Main" component={BottomTabNavigator} />
