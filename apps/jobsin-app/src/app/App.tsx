@@ -1,20 +1,40 @@
 import React, { useState } from 'react';
 
-import { StyleSheet, View } from 'react-native';
-
+import { Typography } from '@libs/constants';
+import { SmallCardTemplate } from '@libs/platform';
 import { Checkbox } from '@libs/core';
 
-const App: React.FC = () => {
+export const App = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = (newIsChecked: boolean) => {
     setIsChecked(newIsChecked);
   };
+    
+  const handleButtonPress = () => {
+    console.log('Button pressed');
+  };
 
   return (
-    <View style={styles.container}>
-      <Checkbox checked={isChecked} onChange={handleCheckboxChange} />
-    </View>
+    <>
+      <StatusBar barStyle="dark-content" />
+      <View>
+        <Text style={styles.text}>App</Text>
+      </View>
+      <View style={styles.container}>
+        <Checkbox checked={isChecked} onChange={handleCheckboxChange} />
+      </View>
+      <View>
+        <SmallCardTemplate
+          imageSrc={require('../../assets/testphoto.png')}
+          title="Google Inc"
+          subTitle="1M Followers"
+          onButtonPress={handleButtonPress}
+          buttonText="Follow"
+        />
+      </View>
+    </>
+
   );
 };
 
