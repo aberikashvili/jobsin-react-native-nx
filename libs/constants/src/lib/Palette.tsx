@@ -7,4 +7,6 @@ export const Palette = {
   green: '#00BFAD',
   blue: '#130160',
   purple: '#D6CDFE',
+  deepPurple: '#7551FF',
+  darkGrey: '#AAA6B9'
 };

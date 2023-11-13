@@ -1,28 +1,62 @@
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
 
 import { Typography } from '@libs/constants';
 import { Button } from '@libs/core';
+import { SmallCardTemplate } from '@libs/platform';
+import { Checkbox } from '@libs/core';
 
 export const App = () => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (newIsChecked: boolean) => {
+    setIsChecked(newIsChecked);
+  };
+    
+  const handleButtonPress = () => {
+    console.log('Button pressed');
+  };
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
+      <View style={styles.container}>
+        <Text style={styles.text}>App</Text>
+      </View>
+      <View style={styles.container}>
+        <Checkbox checked={isChecked} onChange={handleCheckboxChange} />
+      </View>
       <View>
-        <Text style={styles.text}>app</Text>
+        <SmallCardTemplate
+          imageSrc={require('../../assets/testphoto.png')}
+          title="Google Inc"
+          subTitle="1M Followers"
+          onButtonPress={handleButtonPress}
+          buttonText="Follow"
+        />
+      </View>
+      <View>
         <Button textMode="white">LOGIN</Button>
         <Button mode="purple" textMode="blue">
           Sign in with Google
         </Button>
       </View>
     </>
+
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   text: {
     ...Typography({
       weight: 'bold',
     }),
+    textAlign: 'center',
+    marginTop: 100,
   },
 });
 
