@@ -11,7 +11,12 @@
     "react-native-svg": "*",
     "react-native-web": "*",
     "@nx/expo": "*",
-    "@expo/metro-config": "*"
+    "@expo/metro-config": "*",
+    "react": "*",
+    "@react-native-community/checkbox": "*",
+    "react-native-bouncy-checkbox": "*",
+    "@rneui/themed": "*",
+    "react-native-check-box": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/jobsin-app && cp package-lock.json apps/jobsin-app",
