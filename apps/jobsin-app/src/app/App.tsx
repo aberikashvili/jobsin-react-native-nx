@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Typography } from '@libs/constants';
+import { Button } from '@libs/core';
 import { SmallCardTemplate } from '@libs/platform';
 import { Checkbox } from '@libs/core';
 
@@ -32,6 +33,12 @@ export const App = () => {
           onButtonPress={handleButtonPress}
           buttonText="Follow"
         />
+      </View>
+      <View>
+        <Button textMode="white">LOGIN</Button>
+        <Button mode="purple" textMode="blue">
+          Sign in with Google
+        </Button>
       </View>
     </>
 

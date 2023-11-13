@@ -1,1 +1,2 @@
-export * from '../../../libs/core/src/checkbox/CheckBox';
+export * from './button/Button';
+export * from './checkbox/CheckBox';
