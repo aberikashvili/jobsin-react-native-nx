@@ -18,7 +18,7 @@ export const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <View>
+      <View style={styles.container}>
         <Text style={styles.text}>App</Text>
       </View>
       <View style={styles.container}>
@@ -43,6 +43,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  text: {
+    ...Typography({
+      weight: 'bold',
+    }),
+    textAlign: 'center',
     marginTop: 100,
   },
 });
