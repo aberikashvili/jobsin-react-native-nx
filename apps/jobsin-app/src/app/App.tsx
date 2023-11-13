@@ -1,9 +1,16 @@
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
 
 import { Typography } from '@libs/constants';
 import { SmallCardTemplate } from '@libs/platform';
+import { Checkbox } from '@libs/core';
 
 export const App = () => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (newIsChecked: boolean) => {
+    setIsChecked(newIsChecked);
+  };
+    
   const handleButtonPress = () => {
     console.log('Button pressed');
   };
@@ -13,6 +20,9 @@ export const App = () => {
       <StatusBar barStyle="dark-content" />
       <View>
         <Text style={styles.text}>App</Text>
+      </View>
+      <View style={styles.container}>
+        <Checkbox checked={isChecked} onChange={handleCheckboxChange} />
       </View>
       <View>
         <SmallCardTemplate
@@ -24,14 +34,16 @@ export const App = () => {
         />
       </View>
     </>
+
   );
 };
 
 const styles = StyleSheet.create({
-  text: {
-    ...Typography({
-      weight: 'bold',
-    }),
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 100,
   },
 });
 
