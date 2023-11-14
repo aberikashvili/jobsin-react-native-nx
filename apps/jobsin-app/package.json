@@ -11,7 +11,11 @@
     "react-native-svg": "*",
     "react-native-web": "*",
     "@nx/expo": "*",
-    "@expo/metro-config": "*"
+    "@expo/metro-config": "*",
+    "react": "*",
+    "@react-native-community/slider": "*",
+    "@miblanchard/react-native-slider": "*",
+    "react-native-linear-gradient": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/jobsin-app && cp package-lock.json apps/jobsin-app",
