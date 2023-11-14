@@ -68,8 +68,6 @@ const Icon: React.FC<IconProps> = ({ name, onPress }) => {
   const icon = icons[name];
 
   if (!icon) {
-    console.warn(`Icon "${name}" does not exist.`);
-
     return null;
   }
 

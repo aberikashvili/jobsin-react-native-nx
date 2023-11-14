@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { StyleSheet, Switch, Text, View } from 'react-native';
 
-import Icon, { icons } from '../IconComp/Icon';
+import Icon, { icons } from '../icon-comp/Icon';
 
 type SwitchButtonProps = {
   icon: keyof typeof icons;
