@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { StyleSheet, View } from 'react-native';
 
 import { Input } from '@libs/core';
 
-const App = () => {
-  const handleRegistration = (formData) => {
-    formData();
-  };
+const App: React.FC = () => {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <View style={styles.container}>
-      <Input onSubmit={handleRegistration} />
+      <Input label="Full Name" value={fullName} onChangeText={setFullName} />
+      <Input label="Email" value={email} onChangeText={setEmail} />
+      <Input
+        label="Password"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+      />
     </View>
   );
 };
@@ -21,11 +28,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
+    padding: 16,
   },
 });
 

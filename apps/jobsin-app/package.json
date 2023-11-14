@@ -12,7 +12,8 @@
     "react-native-web": "*",
     "@nx/expo": "*",
     "@expo/metro-config": "*",
-    "react": "*"
+    "react": "*",
+    "react-native-vector-icons": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/jobsin-app && cp package-lock.json apps/jobsin-app",
