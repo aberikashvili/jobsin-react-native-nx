@@ -8,5 +8,6 @@ export const Palette = {
   blue: '#130160',
   purple: '#D6CDFE',
   deepPurple: '#7551FF',
-  darkGrey: '#AAA6B9'
+  darkGrey: '#AAA6B9',
+  yellow: ' #FF9228',
 };
