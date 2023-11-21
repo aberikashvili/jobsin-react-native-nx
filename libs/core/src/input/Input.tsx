@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { StyleSheet, Text, TextInput, View } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Icon } from 'react-native-vector-icons/Ionicons';
 
 type InputProps = {
   label: string;
