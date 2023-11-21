@@ -10,21 +10,6 @@ export type RadioButtonProps = {
   onPress: () => void;
 };
 
-// export const RadioButton: React.FC<RadioButtonProps> = ({
-//   label,
-//   selected,
-//   onPress,
-// }) => {
-//   return (
-//     <TouchableOpacity onPress={onPress} style={styles.container}>
-//       <View style={styles.radioButton}>
-//         {selected && <View style={styles.innerCircle} />}
-//       </View>
-//       <Text>{label}</Text>
-//     </TouchableOpacity>
-//   );
-// };
-
 export const RadioButton: React.FC<RadioButtonProps> = ({
   label,
   selected,
@@ -61,7 +46,7 @@ const styles = StyleSheet.create({
     width: 12,
     height: 12,
     borderRadius: 6,
-    backgroundColor: Palette.yellow,
+    backgroundColor: 'yellow',
   },
 });
 
