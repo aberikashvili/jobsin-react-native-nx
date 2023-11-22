@@ -1,10 +1,20 @@
 import React from 'react';
 
-import { Image, ImageSourcePropType, Pressable } from 'react-native';
+import {
+  Image,
+  ImageSourcePropType,
+  ImageStyle,
+  StyleProp,
+  StyleSheet,
+  TouchableOpacity,
+  ViewStyle,
+} from 'react-native';
 
 type IconProps = {
   name: keyof typeof icons;
   onPress?: () => void;
+  style?: StyleProp<ViewStyle>;
+  color?: string;
 };
 
 export const icons: Record<string, ImageSourcePropType> = {
@@ -17,6 +27,7 @@ export const icons: Record<string, ImageSourcePropType> = {
   call: require('../icons/call.png'),
   camera: require('../icons/camera.png'),
   chat: require('../icons/chat.png'),
+  clock: require('../icons/clock.png'),
   comments: require('../icons/comments.png'),
   connection: require('../icons/connection.png'),
   darkMode: require('../icons/darkMode.png'),
@@ -38,6 +49,7 @@ export const icons: Record<string, ImageSourcePropType> = {
   languageAddIcon: require('../icons/languageAddIcon.png'),
   location: require('../icons/location.png'),
   logout: require('../icons/logout.png'),
+  logo: require('../icons/logo.png'),
   notifications: require('../icons/notifications.png'),
   offNotifications: require('../icons/offNotifications.png'),
   options: require('../icons/options.png'),
@@ -64,18 +76,31 @@ export const icons: Record<string, ImageSourcePropType> = {
   write: require('../icons/write.png'),
 };
 
-const Icon: React.FC<IconProps> = ({ name, onPress }) => {
-  const icon = icons[name];
+const Icon: React.FC<IconProps> = ({ name, onPress, style, color }) => {
+  const iconSource = icons[name];
 
-  if (!icon) {
+  if (!iconSource) {
     return null;
   }
+  const iconStyle: StyleProp<ImageStyle> = [
+    styles.icon,
+    color ? { tintColor: color } : {},
+  ];
 
   return (
-    <Pressable onPress={onPress}>
-      <Image source={icon} />
-    </Pressable>
+    <TouchableOpacity onPress={onPress} style={[styles.iconContainer, style]}>
+      <Image source={iconSource} style={iconStyle} />
+    </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+  iconContainer: {},
+  icon: {
+    width: 20,
+    height: 20,
+    resizeMode: 'contain',
+  },
+});
 
 export default Icon;
