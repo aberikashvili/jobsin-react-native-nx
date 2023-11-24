@@ -7,7 +7,6 @@ const PopupWindow = ({ buttonText = 'Tap to open modal' }) => {
 
   return (
     <View style={styles.container}>
-      {/* Use the `buttonText` prop to change the display("Tap to open modal") text */}
       <TouchableOpacity onPress={() => setModalVisible(true)}>
         <Text>{buttonText}</Text>
       </TouchableOpacity>
@@ -27,7 +26,6 @@ const PopupWindow = ({ buttonText = 'Tap to open modal' }) => {
             <View style={styles.modalView}>
               <View style={styles.draggableIndicator} />
 
-              {/* This button should change with reusable button component  */}
               <TouchableOpacity
                 style={styles.doneButton}
                 onPress={() => setModalVisible(false)}
