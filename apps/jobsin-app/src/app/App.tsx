@@ -1,7 +1,14 @@
-import { Text } from 'react-native/Libraries/Text/Text';
+import { StatusBar } from 'react-native';
 
-export const App = () => {
-  return <Text>app</Text>;
+import StackNavigator from './navigators/StackNavigator';
+
+export const App = ()=> {
+  return (
+    <>
+      <StatusBar barStyle="dark-content" />
+      <StackNavigator />
+    </>
+  );
 };
 
 export default App;
