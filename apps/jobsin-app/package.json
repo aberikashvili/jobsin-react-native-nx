@@ -21,7 +21,8 @@
     "@react-navigation/stack": "*",
     "@expo/vector-icons": "*",
     "@react-navigation/bottom-tabs": "*",
-    "react-native-modal": "*"
+    "react-native-modal": "*",
+    "@miblanchard/react-native-slider": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/jobsin-app && cp package-lock.json apps/jobsin-app",
