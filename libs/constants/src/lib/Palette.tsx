@@ -1,4 +1,7 @@
 export const Palette = {
+  remote: '#AFECFE',
+  full: '#BEAFFE',
+  part: '#FFD6AD',
   white: '#ffffff',
   black: '#000000',
   dark: '#181818',
@@ -6,6 +9,7 @@ export const Palette = {
   grey: '#D9D9D9',
   green: '#00BFAD',
   blue1: '#130160',
+  blue2: '#150B3D',
   purple: '#D6CDFE',
   blue: '#0D0140',
   deepPurple: '#7551FF',
