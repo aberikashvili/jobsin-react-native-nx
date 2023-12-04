@@ -1,13 +1,32 @@
-import { StatusBar } from 'react-native';
+import { useState } from 'react';
 
-import StackNavigator from './navigators/StackNavigator';
+import { Text, View } from 'react-native';
 
-export const App = () => {
+import { RadioButton } from '@libs/core';
+
+const App: React.FC = () => {
+  const [selectedValue, setSelectedValue] = useState<string | undefined>(
+    undefined
+  );
+
+  const handleRadioButtonPress = (value: string) => {
+    setSelectedValue(value);
+  };
+
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <StackNavigator />
-    </>
+    <View style={{ padding: 16 }}>
+      <Text>Your App</Text>
+      <RadioButton
+        label="Option 1"
+        selected={selectedValue === 'option1'}
+        onPress={() => handleRadioButtonPress('option1')}
+      />
+      <RadioButton
+        label="Option 2"
+        selected={selectedValue === 'option2'}
+        onPress={() => handleRadioButtonPress('option2')}
+      />
+    </View>
   );
 };
 
