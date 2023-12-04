@@ -13,7 +13,14 @@
     "@nx/expo": "*",
     "@expo/metro-config": "*",
     "react": "*",
-    "react-native-vector-icons": "*"
+    "@react-native-community/checkbox": "*",
+    "react-native-bouncy-checkbox": "*",
+    "@rneui/themed": "*",
+    "react-native-check-box": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/stack": "*",
+    "@expo/vector-icons": "*",
+    "@react-navigation/bottom-tabs": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/jobsin-app && cp package-lock.json apps/jobsin-app",
