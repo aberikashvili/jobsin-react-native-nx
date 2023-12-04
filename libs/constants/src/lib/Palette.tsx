@@ -10,8 +10,4 @@ export const Palette = {
   blue: '#0D0140',
   deepPurple: '#7551FF',
   darkGrey: '#AAA6B9',
-<<<<<<< HEAD
-  yellow: ' #FF9228',
-=======
->>>>>>> 2b37cd0e0343ecbbafe9b5c3d5c30eea167cde2d
 };
