@@ -1,14 +1,35 @@
-import { StatusBar } from 'react-native';
+import React, { useState } from 'react';
 
-import StackNavigator from './navigators/StackNavigator';
+import { StyleSheet, View } from 'react-native';
 
-export const App = () => {
+import { Input } from '@libs/core';
+
+const App: React.FC = () => {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <StackNavigator />
-    </>
+    <View style={styles.container}>
+      <Input label="Full Name" value={fullName} onChangeText={setFullName} />
+      <Input label="Email" value={email} onChangeText={setEmail} />
+      <Input
+        label="Password"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+      />
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+  },
+});
 
 export default App;
