@@ -17,8 +17,6 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [data, setData] = useState<UserData[]>([
     { username: 'Orlando Diggs.', image: require('./testUser.png') },
-    // { username: 'User2', image: require('./testUser.png') },
-    // { username: 'User2', image: require('./testUser.png') },
   ]);
 
   return (
